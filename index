@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple PHP Calculator</title>
+</head>
+<body>
+
+    <h2>Simple PHP Calculator</h2>
+
+    <form method="post" action="">
+        <label for="num1">Enter the first number:</label>
+        <input type="number" name="num1" required>
+        <br>
+        <label for="num2">Enter the second number:</label>
+        <input type="number" name="num2" required>
+        <br>
+        <input type="submit" name="calculate" value="Calculate">
+    </form>
+
+    <?php
+    // Check if the form is submitted
+    if (isset($_POST['calculate'])) {
+        // Get user input
+        $num1 = isset($_POST['num1']) ? $_POST['num1'] : 0;
+        $num2 = isset($_POST['num2']) ? $_POST['num2'] : 0;
+
+        // Calculate the sum
+        $sum = $num1 + $num2;
+
+        // Display the result
+        echo "<p>The sum of $num1 and $num2 is: $sum</p>";
+    }
+    ?>
+
+</body>
+</html>
